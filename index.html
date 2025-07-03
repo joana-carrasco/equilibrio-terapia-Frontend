@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Equilíbrio e Terapia - Conselho do Ano</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div id="conteudo-principal"> 
+
+    <h1 id="titulo">Equilíbrio e Terapia</h1>
+    <h2 id="subtitulo">Conselho do Ano</h2>
+
+    <p id="frase-destaque">✨ Descubra qual energia vai guiar ✨</p>
+
+    <div id="formulario-inicial" class="formulario">
+      <label for="ano">Para qual ano você deseja o conselho?</label><br>
+      <input type="text" id="ano" placeholder="Ex: 2025"><br><br>
+
+      <label for="aniversario">Digite sua data de nascimento:</label><br>
+      <input type="text" id="aniversario" placeholder="Ex: 23/06/1985" oninput="aplicarMascaraData(event)">
+      <br><br>
+
+      <button type="button" onclick="gerarConselho()">Gerar Conselho</button>
+      <button type="button" onclick="limparCampos()">Limpar</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <div id="chamada-cadastro" style="display: none;">
+      <div class="mensagem-convite">
+        Você gostou do seu conselho?<br>
+        Para receber mais novidades e orientações da Equilíbrio e Terapia,
+        <a href="#" onclick="mostrarFormularioCadastro()">clique aqui</a>.
+      </div>
+    </div>
+
+  </div> 
+
+  <footer id="rodape">
+  Projeto criado por Joana Carrasco – Pós-graduação em Engenharia de Software - PUC - RJ
+  <div id="link-historico" style="display: none;">
+  <br><a href="#" onclick="abrirHistorico()">Histórico de conselhos</a>
+  </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <div id="modalCadastro" class="modal-overlay" style="display: none;">
+    <div class="modal-conteudo">
+      <button class="fechar" onclick="fecharModal()">×</button>
+      <h3>Cadastre seu e-mail</h3>
+      <input type="text" id="nome" placeholder="Nome completo"><br><br>
+      <input type="email" id="email" placeholder="Seu e-mail"><br><br>
+      <button onclick="cadastrarUsuario()">Cadastrar</button>
+      <p id="mensagemCadastro" style="margin-top: 10px;"></p>
+    </div>
+  </div>
+
+</body>
+</html>
